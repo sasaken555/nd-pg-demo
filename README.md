@@ -26,5 +26,8 @@ docker build -t nd-pg-demo .
 4. Run App via Docker Container
 
 ```
-docker run -d --rm -p 3000:3000 nd-pg-demo
+docker run -d --rm -p 3000:3000 \
+  -e PG_USER=xxxx -e PG_PASS=xxxx \
+  -e PG_HOST=xxxx -e PG_PORT=xxxx -e PG_DBNAME=xxxx \
+  nd-pg-demo:latest
 ```
