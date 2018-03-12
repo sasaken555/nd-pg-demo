@@ -3,11 +3,11 @@ var router = express.Router();
 
 const { Pool } = require('pg');
 const pool = new Pool({
-  user: 'pguser001',
-  host: '172.17.0.2',
-  database: 'test',
-  password: 'pguser001pw',
-  port: 5432
+  user: process.env.PG_USER,
+  host: process.env.PG_HOST,
+  database: process.env.PG_DBNAME,
+  password: process.env.PG_PASS,
+  port: process.env.PG_PORT
 });
 
 router.get('/findAll', (req, res, next) => {
